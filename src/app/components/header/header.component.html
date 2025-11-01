@@ -28,26 +28,36 @@
       <!-- Contact Info -->
       <div class="contact-section">
         <div class="contact-grid">
-          <div class="contact-item" *ngFor="let contact of getContacts()">
+          <div class="contact-item">
             <div class="contact-icon">
-              <i [class]="contact.icon"></i>
+              <i class="phone-icon"></i>
             </div>
             <div class="contact-details">
-              <span class="contact-label">{{ contact.label }}</span>
-              <span class="contact-value">{{ contact.value }}</span>
+              <span class="contact-label">Phone</span>
+              <span class="contact-value">{{ personalInfo?.phone }}</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="email-icon"></i>
+            </div>
+            <div class="contact-details">
+              <span class="contact-label">Email</span>
+              <span class="contact-value">{{ personalInfo?.email }}</span>
             </div>
           </div>
         </div>
 
         <!-- Social Links -->
         <div class="social-links">
-          <a href="https://linktr.ee/uchoup" target="_blank" class="social-link">
+          <a [href]="'https://' + personalInfo?.website" target="_blank" class="social-link">
             <i class="link-icon"></i>
-            <span>More Info</span>
+            <span>Connect With Me</span>
           </a>
-          <a href="mailto:yusufwijaya3@gmail.com" class="social-link">
+          <a [href]="'mailto:' + personalInfo?.email" class="social-link">
             <i class="email-icon"></i>
-            <span>Email</span>
+            <span>Send Email</span>
           </a>
         </div>
       </div>

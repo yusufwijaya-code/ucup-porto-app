@@ -29,34 +29,11 @@ export class HeaderComponent implements OnInit {
 
   getDummyPhoto(): string {
     const name = this.personalInfo?.name || 'Yusuf Wijaya';
-    return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=667eea&color=fff&size=280&bold=true&length=2`;
+    return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=667eea&color=fff&size=280&bold=true`;
   }
 
   handleImageError(event: any): void {
-    console.log('Photo not found, using dummy photo');
     this.photoError = true;
     event.target.src = this.getDummyPhoto();
-  }
-
-  getContacts(): any[] {
-    if (!this.personalInfo) return [];
-
-    return [
-      {
-        icon: 'phone-icon',
-        label: 'Phone',
-        value: this.personalInfo.phone
-      },
-      {
-        icon: 'email-icon',
-        label: 'Email',
-        value: this.personalInfo.email
-      },
-      {
-        icon: 'website-icon',
-        label: 'Website',
-        value: this.personalInfo.website
-      }
-    ];
   }
 }
