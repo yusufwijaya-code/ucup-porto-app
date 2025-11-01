@@ -1,13 +1,13 @@
 [
-  {"name": "Golang", "level": "Basic"},
-  {"name": "Yii2 Framework", "level": "Advanced"},
-  {"name": "Angular Framework", "level": "Intermediate"},
-  {"name": "Laravel Framework", "level": "Advanced"},
-  {"name": "PHP Native", "level": "Intermediate"},
-  {"name": "Bootstrap Framework", "level": "Intermediate"},
-  {"name": "Tailwind Framework", "level": "Basic"},
-  {"name": "JQuery AJAX", "level": "Intermediate"},
-  {"name": "Figma Graphic Design", "level": "Advanced"},
-  {"name": "SQL Database", "level": "Intermediate"},
-  {"name": "Google Cloud Engine", "level": "Basic"}
+  {"name": "Golang", "level": "Basic", "category": "backend"},
+  {"name": "Yii2 Framework", "level": "Advanced", "category": "backend"},
+  {"name": "Angular Framework", "level": "Intermediate", "category": "frontend"},
+  {"name": "Laravel Framework", "level": "Advanced", "category": "backend"},
+  {"name": "PHP Native", "level": "Intermediate", "category": "backend"},
+  {"name": "Bootstrap Framework", "level": "Intermediate", "category": "frontend"},
+  {"name": "Tailwind Framework", "level": "Basic", "category": "frontend"},
+  {"name": "JQuery AJAX", "level": "Intermediate", "category": "frontend"},
+  {"name": "Figma Graphic Design", "level": "Advanced", "category": "tools"},
+  {"name": "SQL Database", "level": "Intermediate", "category": "tools"},
+  {"name": "Google Cloud Engine", "level": "Basic", "category": "tools"}
 ]

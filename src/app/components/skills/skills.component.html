@@ -1,14 +1,53 @@
 <section class="skills-section">
   <div class="container">
     <h2 class="section-title">Skills</h2>
+
     <div class="skills-grid">
-      <div class="skill-item" *ngFor="let skill of skills">
-        <div class="skill-info">
-          <span class="skill-name">{{ skill.name }}</span>
-          <span class="skill-level {{ getLevelClass(skill.level) }}">{{ skill.level }}</span>
+      <!-- Frontend Skills -->
+      <div class="skill-category">
+        <h3 class="category-title">Frontend</h3>
+        <div class="skills-list">
+          @for (skill of getSkillsByCategory('frontend'); track skill.name) {
+            <div class="skill-item">
+              <span class="skill-name">{{ skill.name }}</span>
+              <div class="skill-level">
+                <div class="level-progress {{ getLevelClass(skill.level) }}"></div>
+              </div>
+              <span class="level-text">{{ skill.level }}</span>
+            </div>
+          }
         </div>
-        <div class="skill-bar">
-          <div class="skill-progress {{ getLevelClass(skill.level) }}"></div>
+      </div>
+
+      <!-- Backend Skills -->
+      <div class="skill-category">
+        <h3 class="category-title">Backend</h3>
+        <div class="skills-list">
+          @for (skill of getSkillsByCategory('backend'); track skill.name) {
+            <div class="skill-item">
+              <span class="skill-name">{{ skill.name }}</span>
+              <div class="skill-level">
+                <div class="level-progress {{ getLevelClass(skill.level) }}"></div>
+              </div>
+              <span class="level-text">{{ skill.level }}</span>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Tools & Others -->
+      <div class="skill-category">
+        <h3 class="category-title">Tools & Others</h3>
+        <div class="skills-list">
+          @for (skill of getSkillsByCategory('tools'); track skill.name) {
+            <div class="skill-item">
+              <span class="skill-name">{{ skill.name }}</span>
+              <div class="skill-level">
+                <div class="level-progress {{ getLevelClass(skill.level) }}"></div>
+              </div>
+              <span class="level-text">{{ skill.level }}</span>
+            </div>
+          }
         </div>
       </div>
     </div>

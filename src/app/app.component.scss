@@ -1,7 +1,57 @@
 .app-container {
   min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
 .main-content {
-  padding-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "summary"
+    "experience"
+    "education"
+    "skills"
+    "certificates"
+    "languages";
+  gap: 0;
+
+  // Background pattern subtle
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(255,255,255,0.8) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(255,255,255,0.6) 0%, transparent 20%);
+  background-size: 50% 50%, 30% 30%;
+  background-position: left top, right bottom;
+  background-repeat: no-repeat;
+}
+
+app-header { grid-area: header; }
+app-summary { grid-area: summary; }
+app-experience { grid-area: experience; }
+app-education { grid-area: education; }
+app-skills { grid-area: skills; }
+app-certificates { grid-area: certificates; }
+app-languages { grid-area: languages; }
+
+// Smooth scrolling for navigation
+html {
+  scroll-behavior: smooth;
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
 }

@@ -1,37 +1,63 @@
 <header class="header">
   <div class="container">
     <div class="header-content">
-      <!-- Photo Profile -->
-      <div class="profile-photo-container">
-        <img
-          [src]="getProfilePhoto()"
-          [alt]="personalInfo?.name + ' Profile Photo'"
-          class="profile-photo"
-          (error)="handleImageError($event)"
-        >
+      <!-- Profile Section -->
+      <div class="profile-section">
+        <div class="profile-image-container">
+          <img
+            [src]="getProfilePhoto()"
+            [alt]="personalInfo?.name + ' Profile Photo'"
+            class="profile-image"
+            (error)="handleImageError($event)"
+          >
+          <div class="image-overlay">
+            <div class="status-dot"></div>
+          </div>
+        </div>
+
+        <div class="profile-text">
+          <h1 class="name">{{ personalInfo?.name }}</h1>
+          <h2 class="title">{{ personalInfo?.title }}</h2>
+          <div class="location">
+            <i class="pin-icon"></i>
+            <span>{{ personalInfo?.location }}</span>
+          </div>
+        </div>
       </div>
 
-      <h1 class="name">{{ personalInfo?.name }}</h1>
-      <h2 class="title">{{ personalInfo?.title }}</h2>
+      <!-- Contact Info -->
+      <div class="contact-section">
+        <div class="contact-grid">
+          <div class="contact-item" *ngFor="let contact of getContacts()">
+            <div class="contact-icon">
+              <i [class]="contact.icon"></i>
+            </div>
+            <div class="contact-details">
+              <span class="contact-label">{{ contact.label }}</span>
+              <span class="contact-value">{{ contact.value }}</span>
+            </div>
+          </div>
+        </div>
 
-      <div class="contact-info">
-        <div class="contact-item">
-          <i class="icon phone"></i>
-          <span>{{ personalInfo?.phone }}</span>
-        </div>
-        <div class="contact-item">
-          <i class="icon email"></i>
-          <span>{{ personalInfo?.email }}</span>
-        </div>
-        <div class="contact-item">
-          <i class="icon website"></i>
-          <span>{{ personalInfo?.website }}</span>
-        </div>
-        <div class="contact-item">
-          <i class="icon location"></i>
-          <span>{{ personalInfo?.location }}</span>
+        <!-- Social Links -->
+        <div class="social-links">
+          <a href="https://linktr.ee/uchoup" target="_blank" class="social-link">
+            <i class="link-icon"></i>
+            <span>More Info</span>
+          </a>
+          <a href="mailto:yusufwijaya3@gmail.com" class="social-link">
+            <i class="email-icon"></i>
+            <span>Email</span>
+          </a>
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Background Elements -->
+  <div class="background-elements">
+    <div class="bg-circle circle-1"></div>
+    <div class="bg-circle circle-2"></div>
+    <div class="bg-circle circle-3"></div>
   </div>
 </header>

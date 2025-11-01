@@ -1,95 +1,343 @@
 .header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg,
+    rgba(102, 126, 234, 0.95) 0%,
+    rgba(118, 75, 162, 0.85) 50%,
+    rgba(102, 126, 234, 0.95) 100%);
   color: white;
-  padding: 3rem 0;
-  text-align: center;
+  padding: 4rem 0;
   position: relative;
   overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 
-  &::before {
-    content: '';
+  .container {
+    position: relative;
+    z-index: 3;
+  }
+
+  .header-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .profile-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      .profile-image-container {
+        position: relative;
+        margin-bottom: 2rem;
+
+        .profile-image {
+          width: 280px;
+          height: 280px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 6px solid rgba(255, 255, 255, 0.3);
+          box-shadow:
+            0 25px 50px rgba(0, 0, 0, 0.3),
+            0 0 0 1px rgba(255, 255, 255, 0.1),
+            inset 0 0 50px rgba(255, 255, 255, 0.1);
+          transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          position: relative;
+          z-index: 2;
+
+          &:hover {
+            transform: scale(1.05);
+            border-color: rgba(255, 255, 255, 0.6);
+            box-shadow:
+              0 35px 70px rgba(0, 0, 0, 0.4),
+              0 0 0 2px rgba(255, 255, 255, 0.2),
+              inset 0 0 80px rgba(255, 255, 255, 0.2);
+          }
+        }
+
+        .image-overlay {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          z-index: 3;
+
+          .status-dot {
+            width: 20px;
+            height: 20px;
+            background: #4ade80;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
+            animation: pulse 2s infinite;
+          }
+        }
+      }
+
+      .profile-text {
+        .name {
+          font-size: 3.5rem;
+          font-weight: 800;
+          margin-bottom: 0.5rem;
+          background: linear-gradient(135deg, #fff 0%, #e2e8f0 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          letter-spacing: -0.5px;
+        }
+
+        .title {
+          font-size: 1.8rem;
+          font-weight: 300;
+          margin-bottom: 1.5rem;
+          opacity: 0.9;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+        }
+
+        .location {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          font-size: 1.1rem;
+          opacity: 0.8;
+
+          .pin-icon {
+            width: 16px;
+            height: 16px;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+    }
+
+    .contact-section {
+      .contact-grid {
+        display: grid;
+        gap: 1.5rem;
+        margin-bottom: 2.5rem;
+
+        .contact-item {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          padding: 1.5rem;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 20px;
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          transition: all 0.3s ease;
+          position: relative;
+          overflow: hidden;
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg,
+              transparent,
+              rgba(255,255,255,0.2),
+              transparent);
+            transition: left 0.6s;
+          }
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+
+            &::before {
+              left: 100%;
+            }
+          }
+
+          .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+
+            i {
+              width: 24px;
+              height: 24px;
+              background-size: contain;
+              background-repeat: no-repeat;
+            }
+
+            .phone-icon {
+              background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>');
+            }
+
+            .email-icon {
+              background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>');
+            }
+
+            .website-icon {
+              background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>');
+            }
+          }
+
+          .contact-details {
+            .contact-label {
+              display: block;
+              font-size: 0.9rem;
+              opacity: 0.7;
+              margin-bottom: 0.3rem;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+            }
+
+            .contact-value {
+              display: block;
+              font-size: 1.1rem;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+
+        .social-link {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.8rem 1.5rem;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 25px;
+          text-decoration: none;
+          color: white;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          transition: all 0.3s ease;
+          font-weight: 500;
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+          }
+
+          i {
+            width: 18px;
+            height: 18px;
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+
+          .link-icon {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>');
+          }
+
+          .email-icon {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>');
+          }
+        }
+      }
+    }
+  }
+
+  .background-elements {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" opacity="0.1"><polygon fill="white" points="0,1000 1000,0 1000,1000"/></svg>');
-    background-size: cover;
+    z-index: 1;
+    overflow: hidden;
+
+    .bg-circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .circle-1 {
+      width: 300px;
+      height: 300px;
+      top: -150px;
+      right: -100px;
+      animation-delay: 0s;
+    }
+
+    .circle-2 {
+      width: 200px;
+      height: 200px;
+      bottom: 100px;
+      left: -50px;
+      animation-delay: 2s;
+    }
+
+    .circle-3 {
+      width: 150px;
+      height: 150px;
+      top: 50%;
+      right: 20%;
+      animation-delay: 4s;
+    }
   }
+}
 
-  .header-content {
-    position: relative;
-    z-index: 2;
+// Animations
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
 
-    .profile-photo-container {
-      margin-bottom: 2rem;
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
 
-      .profile-photo {
-        width: 180px;
-        height: 180px;
-        border-radius: 50%;
-        border: 4px solid rgba(255, 255, 255, 0.3);
-        object-fit: cover;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        transition: all 0.3s ease;
+// Responsive Design
+@media (max-width: 968px) {
+  .header {
+    min-height: auto;
+    padding: 3rem 0;
 
-        &:hover {
-          transform: scale(1.05);
-          border-color: rgba(255, 255, 255, 0.6);
-          box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
-        }
-      }
-    }
+    .header-content {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      text-align: center;
 
-    .name {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    }
-
-    .title {
-      font-size: 1.5rem;
-      font-weight: 300;
-      margin-bottom: 2rem;
-      opacity: 0.9;
-    }
-
-    .contact-info {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 2rem;
-
-      .contact-item {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 1rem;
-        background: rgba(255, 255, 255, 0.1);
-        padding: 0.5rem 1rem;
-        border-radius: 25px;
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        transition: all 0.3s ease;
-
-        &:hover {
-          background: rgba(255, 255, 255, 0.2);
-          transform: translateY(-2px);
+      .profile-section {
+        .profile-image {
+          width: 220px;
+          height: 220px;
         }
 
-        .icon {
-          width: 18px;
-          height: 18px;
-          background-size: contain;
-          background-repeat: no-repeat;
-          opacity: 0.9;
+        .name {
+          font-size: 2.8rem;
         }
 
-        .phone { background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>'); }
-        .email { background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>'); }
-        .website { background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>'); }
-        .location { background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>'); }
+        .title {
+          font-size: 1.5rem;
+        }
       }
     }
   }
@@ -97,27 +345,33 @@
 
 @media (max-width: 768px) {
   .header {
-    padding: 2rem 0;
-
     .header-content {
-      .profile-photo-container {
-        .profile-photo {
-          width: 140px;
-          height: 140px;
+      .profile-section {
+        .profile-image {
+          width: 180px;
+          height: 180px;
+        }
+
+        .name {
+          font-size: 2.2rem;
+        }
+
+        .title {
+          font-size: 1.3rem;
+          letter-spacing: 2px;
         }
       }
 
-      .name {
-        font-size: 2rem;
-      }
+      .contact-section {
+        .contact-grid {
+          .contact-item {
+            padding: 1.2rem;
+          }
+        }
 
-      .contact-info {
-        flex-direction: column;
-        gap: 1rem;
-        align-items: center;
-
-        .contact-item {
-          width: auto;
+        .social-links {
+          justify-content: center;
+          flex-wrap: wrap;
         }
       }
     }
@@ -126,20 +380,32 @@
 
 @media (max-width: 480px) {
   .header {
+    padding: 2rem 0;
+
     .header-content {
-      .profile-photo-container {
-        .profile-photo {
-          width: 120px;
-          height: 120px;
+      .profile-section {
+        .profile-image {
+          width: 150px;
+          height: 150px;
+        }
+
+        .name {
+          font-size: 2rem;
         }
       }
 
-      .name {
-        font-size: 1.8rem;
-      }
+      .contact-section {
+        .contact-item {
+          flex-direction: column;
+          text-align: center;
+          gap: 0.8rem;
 
-      .title {
-        font-size: 1.2rem;
+          .contact-details {
+            .contact-value {
+              font-size: 1rem;
+            }
+          }
+        }
       }
     }
   }

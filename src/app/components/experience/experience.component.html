@@ -1,24 +1,113 @@
-<section class="experience-section">
+<section class="experience-section" id="experience">
   <div class="container">
-    <h2 class="section-title">Experience</h2>
-    <div class="timeline">
-      @for (exp of experiences; track exp.position) {
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <h3 class="position">{{ exp.position }}</h3>
-              <span class="company">{{ exp.company }}</span>
-              <span class="period">{{ exp.period }}</span>
+    <!-- Section Header -->
+    <div class="section-header">
+      <div class="section-badge">
+        <span class="badge-text">Work Experience</span>
+      </div>
+      <h2 class="section-title">Professional Journey</h2>
+      <p class="section-subtitle">My career path and key accomplishments</p>
+    </div>
+
+    <!-- Experience Timeline -->
+    <div class="experience-timeline">
+      @for (exp of experiences; track exp.position; let i = $index) {
+        <div class="timeline-item" [class]="'item-' + (i + 1)">
+          <!-- Timeline Connector -->
+          <div class="timeline-connector">
+            <div class="connector-line"></div>
+            <div class="connector-dot">
+              <div class="dot-pulse"></div>
             </div>
-            <ul class="responsibilities">
-              @for (responsibility of exp.responsibilities; track responsibility) {
-                <li>{{ responsibility }}</li>
-              }
-            </ul>
+          </div>
+
+          <!-- Experience Card -->
+          <div class="experience-card">
+            <!-- Card Header -->
+            <div class="card-header">
+              <div class="company-info">
+                <div class="company-logo">
+                  <div class="logo-placeholder">
+                    {{ getCompanyInitials(exp.company) }}
+                  </div>
+                </div>
+                <div class="company-details">
+                  <h3 class="position">{{ exp.position }}</h3>
+                  <p class="company">{{ exp.company }}</p>
+                </div>
+              </div>
+              <div class="period-badge">
+                <span class="period">{{ exp.period }}</span>
+                <div class="duration">Full Time</div>
+              </div>
+            </div>
+
+            <!-- Responsibilities -->
+            <div class="responsibilities">
+              <h4 class="responsibilities-title">Key Responsibilities & Achievements</h4>
+              <div class="responsibilities-grid">
+                @for (responsibility of exp.responsibilities; track responsibility) {
+                  <div class="responsibility-item">
+                    <div class="responsibility-icon">✓</div>
+                    <div class="responsibility-text">{{ responsibility }}</div>
+                  </div>
+                }
+              </div>
+            </div>
+
+            <!-- Technologies Used -->
+            <div class="technologies">
+              <div class="tech-label">Technologies Used:</div>
+              <div class="tech-tags">
+                @for (tech of getTechnologies(exp.position); track tech) {
+                  <span class="tech-tag">{{ tech }}</span>
+                }
+              </div>
+            </div>
           </div>
         </div>
       }
     </div>
+
+    <!-- Career Stats -->
+    <div class="career-stats">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">💼</div>
+          <div class="stat-content">
+            <div class="stat-number">{{ experiences.length }}+</div>
+            <div class="stat-label">Professional Roles</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🚀</div>
+          <div class="stat-content">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Projects Delivered</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⭐</div>
+          <div class="stat-content">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Technologies</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📈</div>
+          <div class="stat-content">
+            <div class="stat-number">2+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Background Elements -->
+  <div class="background-elements">
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
   </div>
 </section>
