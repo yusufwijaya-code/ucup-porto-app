@@ -1,55 +1,73 @@
-<section class="skills-section">
+<section class="skills-section" id="skills">
   <div class="container">
-    <h2 class="section-title">Skills</h2>
+    <!-- Section Header -->
+    <div class="section-header">
+      <div class="section-badge">
+        <span class="badge-text">🛠️ Skills</span>
+      </div>
+      <h2 class="section-title">Technical Expertise</h2>
+      <p class="section-subtitle">My technical skills and proficiency levels</p>
+    </div>
 
-    <div class="skills-grid">
-      <!-- Frontend Skills -->
-      <div class="skill-category">
-        <h3 class="category-title">Frontend</h3>
-        <div class="skills-list">
-          @for (skill of getSkillsByCategory('frontend'); track skill.name) {
-            <div class="skill-item">
-              <span class="skill-name">{{ skill.name }}</span>
-              <div class="skill-level">
-                <div class="level-progress {{ getLevelClass(skill.level) }}"></div>
-              </div>
-              <span class="level-text">{{ skill.level }}</span>
-            </div>
-          }
+    <!-- Skills Content -->
+    <div class="skills-content">
+      <!-- Skills Stats -->
+      <div class="skills-stats">
+        <div class="stats-card">
+          <div class="stat-item">
+            <div class="stat-number">{{ getTotalSkills() }}</div>
+            <div class="stat-label">Total Skills</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">{{ getAdvancedSkillsCount() }}</div>
+            <div class="stat-label">Advanced</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">{{ getCategoriesCount() }}</div>
+            <div class="stat-label">Categories</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">{{ getToolsCount() }}</div>
+            <div class="stat-label">Tools</div>
+          </div>
         </div>
       </div>
 
-      <!-- Backend Skills -->
-      <div class="skill-category">
-        <h3 class="category-title">Backend</h3>
-        <div class="skills-list">
-          @for (skill of getSkillsByCategory('backend'); track skill.name) {
-            <div class="skill-item">
-              <span class="skill-name">{{ skill.name }}</span>
-              <div class="skill-level">
-                <div class="level-progress {{ getLevelClass(skill.level) }}"></div>
+      <!-- Main Skills Grid -->
+      <div class="skills-main">
+        <div class="skills-grid">
+          @for (category of getSkillCategories(); track category) {
+            <div class="skill-category">
+              <div class="category-card">
+                <h3 class="category-title">
+                  <span class="category-icon">{{ getCategoryIcon(category) }}</span>
+                  {{ getCategoryDisplayName(category) }}
+                </h3>
+                <div class="skills-list">
+                  @for (skill of getSkillsByCategory(category); track skill.name) {
+                    <div class="skill-item">
+                      <div class="skill-info">
+                        <span class="skill-name">{{ skill.name }}</span>
+                        <span class="level-text">{{ skill.level }}</span>
+                      </div>
+                      <div class="skill-level">
+                        <div class="level-progress {{ getLevelClass(skill.level) }}"></div>
+                      </div>
+                    </div>
+                  }
+                </div>
               </div>
-              <span class="level-text">{{ skill.level }}</span>
-            </div>
-          }
-        </div>
-      </div>
-
-      <!-- Tools & Others -->
-      <div class="skill-category">
-        <h3 class="category-title">Tools & Others</h3>
-        <div class="skills-list">
-          @for (skill of getSkillsByCategory('tools'); track skill.name) {
-            <div class="skill-item">
-              <span class="skill-name">{{ skill.name }}</span>
-              <div class="skill-level">
-                <div class="level-progress {{ getLevelClass(skill.level) }}"></div>
-              </div>
-              <span class="level-text">{{ skill.level }}</span>
             </div>
           }
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Background Elements -->
+  <div class="background-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
   </div>
 </section>

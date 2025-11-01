@@ -1,5 +1,5 @@
 [
-  {"name": "Golang", "level": "Basic", "category": "backend"},
+  {"name": "Golang", "level": "Intermediate", "category": "backend"},
   {"name": "Yii2 Framework", "level": "Advanced", "category": "backend"},
   {"name": "Angular Framework", "level": "Intermediate", "category": "frontend"},
   {"name": "Laravel Framework", "level": "Advanced", "category": "backend"},

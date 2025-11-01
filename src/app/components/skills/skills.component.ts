@@ -12,13 +12,6 @@ import { DataService } from '../../services/data.service';
 export class SkillsComponent implements OnInit {
   skills: any[] = [];
 
-  // Kategorisasi skills
-  skillCategories = {
-    frontend: ['Angular Framework', 'Bootstrap Framework', 'Tailwind Framework', 'JQuery AJAX'],
-    backend: ['Golang', 'Yii2 Framework', 'Laravel Framework', 'PHP Native'],
-    tools: ['Figma Graphic Design', 'SQL Database', 'Google Cloud Engine']
-  };
-
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
@@ -36,8 +29,46 @@ export class SkillsComponent implements OnInit {
     return levelMap[level] || 'basic';
   }
 
+  getSkillCategories(): string[] {
+    const categories = new Set(this.skills.map(skill => skill.category));
+    return Array.from(categories);
+  }
+
   getSkillsByCategory(category: string): any[] {
-    const categorySkills = this.skillCategories[category as keyof typeof this.skillCategories] || [];
-    return this.skills.filter(skill => categorySkills.includes(skill.name));
+    return this.skills.filter(skill => skill.category === category);
+  }
+
+  getCategoryDisplayName(category: string): string {
+    const displayNames: { [key: string]: string } = {
+      'frontend': 'Frontend Development',
+      'backend': 'Backend Development',
+      'tools': 'Tools & Others'
+    };
+    return displayNames[category] || category;
+  }
+
+  getCategoryIcon(category: string): string {
+    const icons: { [key: string]: string } = {
+      'frontend': '🎨',
+      'backend': '⚙️',
+      'tools': '🛠️'
+    };
+    return icons[category] || '💼';
+  }
+
+  getTotalSkills(): number {
+    return this.skills.length;
+  }
+
+  getAdvancedSkillsCount(): number {
+    return this.skills.filter(skill => skill.level === 'Advanced').length;
+  }
+
+  getCategoriesCount(): number {
+    return this.getSkillCategories().length;
+  }
+
+  getToolsCount(): number {
+    return this.skills.filter(skill => skill.category === 'tools').length;
   }
 }
