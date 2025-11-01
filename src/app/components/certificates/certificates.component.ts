@@ -18,4 +18,47 @@ export class CertificatesComponent implements OnInit {
       this.certificates = data;
     });
   }
+
+  getTotalCertificates(): number {
+    return this.certificates.length;
+  }
+
+  getActiveCertificates(): number {
+    const currentYear = new Date().getFullYear();
+    return this.certificates.filter(cert => {
+      const year = parseInt(cert.period.split('/')[1]);
+      return year >= currentYear - 1; // Active if from last year or current
+    }).length;
+  }
+
+  getOrganizationsCount(): number {
+    const organizations = new Set(this.certificates.map(cert => cert.issuer));
+    return organizations.size;
+  }
+
+  getLatestYear(): number {
+    const years = this.certificates.map(cert => {
+      const yearPart = cert.period.split('/')[1];
+      return parseInt(yearPart) || new Date().getFullYear();
+    });
+    return Math.max(...years);
+  }
+
+  getStatusClass(period: string): string {
+    const currentYear = new Date().getFullYear();
+    const year = parseInt(period.split('/')[1]);
+
+    if (year >= currentYear) return 'active';
+    if (year >= currentYear - 2) return 'recent';
+    return 'completed';
+  }
+
+  getStatusText(period: string): string {
+    const currentYear = new Date().getFullYear();
+    const year = parseInt(period.split('/')[1]);
+
+    if (year >= currentYear) return 'Active';
+    if (year >= currentYear - 2) return 'Recent';
+    return 'Completed';
+  }
 }
