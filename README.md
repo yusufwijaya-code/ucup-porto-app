@@ -128,9 +128,9 @@ ngh --dir=dist/ucup-porto-app
 ## 👨‍💻 Author
 
 **Yusuf Wijaya**
-📧 Email: [yusufwijaya3@gmail.com](mailto:yusufwijaya3@gmail.com)
-🌐 Connect With Me: [linktr.ee/uchoup](https://linktr.ee/uchoup)
-🐙 GitHub: [@yusufwijaya-code](https://github.com/yusufwijaya-code)
+1. 📧 Email: [yusufwijaya3@gmail.com](mailto:yusufwijaya3@gmail.com)
+2. 🌐 Connect With Me: [linktr.ee/uchoup](https://linktr.ee/uchoup)
+3. 🐙 GitHub: [@yusufwijaya-code](https://github.com/yusufwijaya-code)
 
 ---
 
