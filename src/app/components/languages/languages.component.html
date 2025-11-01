@@ -1,33 +1,85 @@
-<section class="languages-section">
+<section class="languages-section" id="languages">
   <div class="container">
-    <h2 class="section-title">Languages</h2>
-    <div class="languages-container">
-      <div class="language-item" *ngFor="let language of languages">
-        <div class="language-header">
-          <div class="language-info">
-            <h3 class="language-name">{{ language.name }}</h3>
-            <span class="language-level {{ getProficiencyClass(language.level) }}">
-              {{ language.level }}
-            </span>
+    <!-- Section Header -->
+    <div class="section-header">
+      <div class="section-badge">
+        <span class="badge-text">🌐 Languages</span>
+      </div>
+      <h2 class="section-title">Language Proficiency</h2>
+      <p class="section-subtitle">My language skills and proficiency levels</p>
+    </div>
+
+    <!-- Languages Content -->
+    <div class="languages-content">
+      <!-- Languages Stats -->
+      <div class="languages-stats">
+        <div class="stats-card">
+          <div class="stat-item">
+            <div class="stat-number">{{ getTotalLanguages() }}</div>
+            <div class="stat-label">Total Languages</div>
           </div>
-          <div class="language-percentage">
-            {{ getProficiencyLevel(language.level) }}%
+          <div class="stat-item">
+            <div class="stat-number">{{ getNativeLanguages() }}</div>
+            <div class="stat-label">Native</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">{{ getIntermediatePlusCount() }}</div>
+            <div class="stat-label">Intermediate+</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">{{ getCountriesCount() }}</div>
+            <div class="stat-label">Countries</div>
           </div>
         </div>
-        <div class="language-progress">
-          <div class="progress-bar">
-            <div
-              class="progress-fill {{ getProficiencyClass(language.level) }}"
-              [style.width.%]="getProficiencyLevel(language.level)">
+      </div>
+
+      <!-- Main Languages List -->
+      <div class="languages-main">
+        <div class="languages-container">
+          @for (language of languages; track language.name) {
+            <div class="language-item">
+              <div class="language-header">
+                <div class="language-info">
+                  <div class="language-icon">
+                    <div class="icon-wrapper">
+                      {{ language.icon }}
+                    </div>
+                  </div>
+                  <div class="language-details">
+                    <h3 class="language-name">{{ language.name }}</h3>
+                    <span class="language-level {{ getProficiencyClass(language.level) }}">
+                      {{ language.level }}
+                    </span>
+                  </div>
+                </div>
+                <div class="language-percentage">
+                  {{ getProficiencyLevel(language.level) }}%
+                </div>
+              </div>
+              <div class="language-progress">
+                <div class="progress-bar">
+                  <div
+                    class="progress-fill {{ getProficiencyClass(language.level) }}"
+                    [style.width.%]="getProficiencyLevel(language.level)">
+                  </div>
+                </div>
+              </div>
+              <div class="language-description">
+                <span class="description-text" [class]="getProficiencyClass(language.level)">
+                  {{ getLanguageDescription(language.level) }}
+                </span>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="language-description">
-          <span class="description-text" [class]="getProficiencyClass(language.level)">
-            {{ getLanguageDescription(language.level) }}
-          </span>
+          }
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Background Elements -->
+  <div class="background-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
   </div>
 </section>

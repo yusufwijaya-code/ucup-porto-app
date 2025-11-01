@@ -48,4 +48,23 @@ export class LanguagesComponent implements OnInit {
     };
     return descriptionMap[level] || 'Language proficiency';
   }
+
+  getTotalLanguages(): number {
+    return this.languages.length;
+  }
+
+  getNativeLanguages(): number {
+    return this.languages.filter(lang => lang.level === 'Native').length;
+  }
+
+  getIntermediatePlusCount(): number {
+    return this.languages.filter(lang =>
+      lang.level === 'Intermediate' || lang.level === 'Advanced' || lang.level === 'Native'
+    ).length;
+  }
+
+  getCountriesCount(): number {
+    const countries = new Set(this.languages.map(lang => lang.icon));
+    return countries.size;
+  }
 }
