@@ -1,39 +1,63 @@
-<section class="education-section">
+<section class="education-section" id="education">
   <div class="container">
-    <h2 class="section-title">Education</h2>
-    <div class="education-timeline">
-      @for (edu of education; track edu.degree) {
-        <div class="education-item">
-          <div class="education-card">
-            <div class="education-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
-              </svg>
-            </div>
-            <div class="education-content">
+    <!-- Section Header -->
+    <div class="section-header">
+      <div class="section-badge">
+        <span class="badge-text">🎓 Education</span>
+      </div>
+      <h2 class="section-title">Academic Journey</h2>
+      <p class="section-subtitle">My educational background and achievements</p>
+    </div>
+
+    <!-- Education Content -->
+    <div class="education-content">
+      <!-- Main Education Card -->
+      <div class="education-main">
+        <div class="education-card">
+          @for (edu of education; track edu.degree) {
+            <div class="education-item">
+              <!-- Education Header -->
               <div class="education-header">
-                <h3 class="degree">{{ edu.degree }}</h3>
-                <span class="year">{{ edu.year }}</span>
+                <div class="education-icon">
+                  <div class="icon-wrapper">
+                    🎓
+                  </div>
+                </div>
+                <div class="education-details">
+                  <h3 class="degree">{{ edu.degree }}</h3>
+                  <p class="institution">{{ edu.institution }}</p>
+                  <div class="education-meta">
+                    <span class="year">{{ edu.year }}</span>
+                    <span class="type">{{ edu.type }}</span>
+                  </div>
+                </div>
               </div>
-              <p class="institution">{{ edu.institution }}</p>
-              <p class="type">{{ edu.type }}</p>
+
+              <!-- Achievements -->
               @if (edu.achievements && edu.achievements.length > 0) {
                 <div class="achievements">
-                  <h4 class="achievements-title">Key Achievements:</h4>
-                  <ul class="achievements-list">
+                  <h4 class="achievements-title">Key Achievements</h4>
+                  <div class="achievements-grid">
                     @for (achievement of edu.achievements; track achievement) {
-                      <li class="achievement-item">
-                        <span class="achievement-icon">🎯</span>
-                        {{ achievement }}
-                      </li>
+                      <div class="achievement-item">
+                        <div class="achievement-icon">⭐</div>
+                        <div class="achievement-text">{{ achievement }}</div>
+                      </div>
                     }
-                  </ul>
+                  </div>
                 </div>
               }
             </div>
-          </div>
+          }
         </div>
-      }
+      </div>
     </div>
+  </div>
+
+  <!-- Background Elements -->
+  <div class="background-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
   </div>
 </section>
