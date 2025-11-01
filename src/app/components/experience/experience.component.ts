@@ -20,15 +20,6 @@ export class ExperienceComponent implements OnInit {
     });
   }
 
-  getCompanyInitials(company: string): string {
-    return company
-      .split(' ')
-      .map(word => word.charAt(0))
-      .join('')
-      .toUpperCase()
-      .substring(0, 2);
-  }
-
   getTechnologies(position: string): string[] {
     const techMap: { [key: string]: string[] } = {
       'Software Engineer': ['Yii2', 'Angular', 'PHP', 'JavaScript', 'MySQL', 'REST API'],

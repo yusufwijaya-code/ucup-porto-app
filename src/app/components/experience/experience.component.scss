@@ -170,8 +170,8 @@
             align-items: center;
             gap: 1rem;
 
-            .company-logo {
-              .logo-placeholder {
+            .company-icon {
+              .icon-wrapper {
                 width: 60px;
                 height: 60px;
                 background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -180,8 +180,7 @@
                 align-items: center;
                 justify-content: center;
                 color: white;
-                font-weight: 700;
-                font-size: 1.2rem;
+                font-size: 1.5rem;
                 box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
               }
             }
