@@ -8,24 +8,23 @@ A modern, responsive portfolio website built with **Angular 17**, featuring an e
 ## 🚀 Features
 
 - 🎨 **Modern Design** – Clean and professional layout with gradient themes  
-- 📱 **Responsive** – Fully responsive for desktop, tablet, and mobile  
-- ⚡ **Angular 17** – Built using the latest Angular framework  
-- 🧩 **Standalone Components** – Modern component architecture  
+- 📱 **Responsive** – Works on desktop, tablet, and mobile  
+- ⚡ **Angular 17** – Latest Angular features and standalone components  
 - 💅 **SCSS Styling** – Custom, maintainable, and scalable styles  
-- 🧠 **JSON Data** – Dynamic content management from JSON files  
+- 🧠 **JSON Data** – Dynamic content from JSON files  
 - 🌀 **Smooth Animations** – Elegant transitions and hover effects  
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Category | Technology |
-|-----------|-------------|
-| **Framework** | Angular 17 |
-| **Styling** | SCSS |
-| **Icons** | SVG Icons |
-| **Fonts** | Google Fonts (Inter) |
-| **Deployment** | GitHub Pages / Netlify / Vercel |
+| Category    | Technology                        |
+|------------|----------------------------------|
+| Framework   | Angular 17                        |
+| Styling     | SCSS                              |
+| Icons       | SVG Icons                         |
+| Fonts       | Google Fonts (Inter)              |
+| Deployment  | GitHub Pages / Netlify / Vercel   |
 
 ---
 
@@ -95,17 +94,17 @@ src/
 
 ## 📱 Responsive Breakpoints
 
-| Device      | Width          |
-| ----------- | -------------- |
-| **Desktop** | ≥ 1200px       |
-| **Tablet**  | 768px – 1199px |
-| **Mobile**  | 320px – 767px  |
+| Device  | Width          |
+| ------- | -------------- |
+| Desktop | ≥ 1200px       |
+| Tablet  | 768px – 1199px |
+| Mobile  | 320px – 767px  |
 
 ---
 
 ## 🚀 Deployment
 
-### **GitHub Pages**
+### GitHub Pages
 
 ```bash
 npm install -g angular-cli-ghpages
@@ -113,13 +112,13 @@ ng build --base-href "https://yusufwijaya-code.github.io/ucup-porto-app/"
 ngh --dir=dist/ucup-porto-app
 ```
 
-### **Netlify**
+### Netlify
 
 1. Connect your GitHub repository to Netlify
 2. Set **Build Command**: `npm run build`
 3. Set **Publish Directory**: `dist/ucup-porto-app`
 
-### **Vercel**
+### Vercel
 
 1. Connect your GitHub repository to Vercel
 2. Framework: **Angular**
@@ -140,4 +139,4 @@ ngh --dir=dist/ucup-porto-app
 
 This project is licensed under the **MIT License** – feel free to use and modify it for your own portfolio.
 
----
+```
