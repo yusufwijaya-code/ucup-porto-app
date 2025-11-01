@@ -35,37 +35,33 @@
             {{ personalInfo?.description || 'Passionate about creating innovative web solutions and building scalable applications. Specialized in modern web technologies and cloud computing.' }}
           </p>
 
+          <!-- Contact Info -->
+          <div class="contact-info">
+            <div class="contact-item">
+              <span class="contact-icon">📱</span>
+              <span class="contact-text">{{ personalInfo?.phone || '0895394755672' }}</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📧</span>
+              <span class="contact-text">{{ personalInfo?.email || 'yusufwijaya3@gmail.com' }}</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📍</span>
+              <span class="contact-text">{{ personalInfo?.location || 'Depok, Jawa Barat' }}</span>
+            </div>
+          </div>
+
           <div class="cta-buttons">
             <a href="#summary" class="cta-btn primary">
               <span class="btn-icon">👋</span>
               About Me
             </a>
-            <a href="#experience" class="cta-btn secondary">
-              <span class="btn-icon">💼</span>
-              View Experience
+            <a [href]="personalInfo?.website || 'https://linktr.ee/uchoup'"
+               target="_blank"
+               class="cta-btn secondary">
+              <span class="btn-icon">🔗</span>
+              Connect With Me
             </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Stats Section -->
-      <div class="stats-section">
-        <div class="stats-grid">
-          <div class="stat-item">
-            <div class="stat-number">2+</div>
-            <div class="stat-label">Years Experience</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">15+</div>
-            <div class="stat-label">Projects Completed</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">10+</div>
-            <div class="stat-label">Technologies</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">5+</div>
-            <div class="stat-label">Certificates</div>
           </div>
         </div>
       </div>
