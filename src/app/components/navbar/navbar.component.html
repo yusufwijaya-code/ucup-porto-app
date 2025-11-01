@@ -42,7 +42,11 @@
 
     <!-- Mobile Menu Button -->
     <button class="mobile-menu-btn" (click)="toggleMobileMenu()" aria-label="Toggle menu">
-      <span class="menu-icon" [class.active]="isMobileMenuOpen">☰</span>
+      <div class="burger-icon" [class.active]="isMobileMenuOpen">
+        <span class="burger-line line-1"></span>
+        <span class="burger-line line-2"></span>
+        <span class="burger-line line-3"></span>
+      </div>
     </button>
   </div>
 
@@ -52,9 +56,9 @@
       <span class="nav-icon">🏠</span>
       Home
     </a>
-    <a href="#summary" class="mobile-nav-link" (click)="closeMobileMenu()" [class.active]="activeSection === 'summary'">
+    <a href="#about" class="mobile-nav-link" (click)="closeMobileMenu()" [class.active]="activeSection === 'about'">
       <span class="nav-icon">👋</span>
-      About Me
+      About
     </a>
     <a href="#experience" class="mobile-nav-link" (click)="closeMobileMenu()" [class.active]="activeSection === 'experience'">
       <span class="nav-icon">💼</span>

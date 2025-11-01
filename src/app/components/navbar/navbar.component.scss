@@ -134,7 +134,7 @@
       }
     }
 
-    // Mobile Menu Button
+    // Mobile Menu Button dengan Burger Icon
     .mobile-menu-btn {
       display: none;
       background: none;
@@ -143,19 +143,65 @@
       padding: 0.5rem;
       border-radius: 8px;
       transition: all 0.3s ease;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
 
       &:hover {
         background: rgba(102, 126, 234, 0.1);
       }
 
-      .menu-icon {
-        font-size: 1.5rem;
-        color: #4a5568;
+      .burger-icon {
+        display: flex;
+        flex-direction: column;
+        width: 24px;
+        height: 18px;
+        position: relative;
         transition: all 0.3s ease;
 
+        .burger-line {
+          display: block;
+          height: 2px;
+          width: 100%;
+          background: #4a5568;
+          border-radius: 2px;
+          transition: all 0.3s ease;
+          position: absolute;
+          left: 0;
+
+          &.line-1 {
+            top: 0;
+          }
+
+          &.line-2 {
+            top: 50%;
+            transform: translateY(-50%);
+          }
+
+          &.line-3 {
+            bottom: 0;
+          }
+        }
+
+        // Animasi menjadi silang (X)
         &.active {
-          color: #667eea;
-          transform: rotate(90deg);
+          .burger-line {
+            &.line-1 {
+              top: 50%;
+              transform: translateY(-50%) rotate(45deg);
+            }
+
+            &.line-2 {
+              opacity: 0;
+              transform: translateX(-10px);
+            }
+
+            &.line-3 {
+              bottom: 50%;
+              transform: translateY(50%) rotate(-45deg);
+            }
+          }
         }
       }
     }
@@ -191,32 +237,49 @@
       border-bottom: 1px solid rgba(102, 126, 234, 0.1);
       transition: all 0.3s ease;
       position: relative;
+      color: #4a5568;
+      font-weight: 500;
 
       .nav-icon {
         font-size: 1.2rem;
         width: 24px;
         text-align: center;
+        transition: transform 0.3s ease;
       }
 
       &:last-child {
         border-bottom: none;
       }
 
+      // Hover effect tanpa ganti warna background
       &:hover {
         background: rgba(102, 126, 234, 0.05);
         padding-left: 2.5rem;
+        color: #667eea;
 
         .nav-icon {
           transform: scale(1.1);
         }
       }
 
+      // Active state tanpa ganti warna background
       &.active {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
+        color: #667eea;
+        font-weight: 600;
+        background: rgba(102, 126, 234, 0.08);
 
         .nav-icon {
           transform: scale(1.1);
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 4px;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
       }
     }
@@ -272,7 +335,7 @@
       }
 
       .mobile-menu-btn {
-        display: block;
+        display: flex;
       }
     }
   }
@@ -297,6 +360,10 @@
         font-size: 0.95rem;
 
         &:hover {
+          padding-left: 2rem;
+        }
+
+        &.active {
           padding-left: 2rem;
         }
       }
