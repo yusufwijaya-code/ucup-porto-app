@@ -11,86 +11,66 @@
 
     <!-- Summary Content -->
     <div class="summary-content">
-      <!-- Profile Stats -->
-      <div class="profile-stats">
-        <div class="stat-item">
-          <div class="stat-number">2+</div>
-          <div class="stat-label">Years Experience</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">10+</div>
-          <div class="stat-label">Projects Completed</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">5+</div>
-          <div class="stat-label">Technologies</div>
+
+      <!-- Profile Stats - Mobile First -->
+      <div class="profile-stats" *ngIf="summary?.stats">
+        <div class="stat-item" *ngFor="let stat of summary.stats">
+          <div class="stat-number">{{ stat.number }}</div>
+          <div class="stat-label">{{ stat.label }}</div>
         </div>
       </div>
 
       <!-- Main Summary Text -->
       <div class="summary-text">
         <div class="text-content">
-          <p class="intro-text">
-            Hello! I'm <span class="highlight">Yusuf Wijaya</span>, a passionate Web Development Enthusiast with a strong foundation in both frontend and backend technologies.
-          </p>
-
-          <div class="education-highlight">
-            <div class="edu-icon">🎓</div>
-            <div class="edu-text">
-              I hold a <strong>Bachelor's degree in Informatics Engineering</strong> from
-              <strong>UIN Syarif Hidayatullah</strong>, graduating with <strong class="cum-laude">Cum Laude honors</strong>.
-            </div>
+          <div class="summary-paragraphs">
+            <p class="summary-text-paragraph">
+              {{ summary?.content }}
+            </p>
           </div>
 
-          <div class="expertise-section">
-            <h3 class="expertise-title">Technical Expertise</h3>
-            <div class="expertise-grid">
-              <div class="expertise-item">
-                <div class="expertise-icon">⚡</div>
-                <div class="expertise-content">
-                  <h4>Backend Development</h4>
-                  <p>Golang, PHP Native, Laravel, Yii2 Framework</p>
-                </div>
+          <!-- Skills Highlights -->
+          <div class="skills-highlights" *ngIf="summary?.skills">
+            <!-- Backend Skills -->
+            <div class="skills-category" *ngIf="summary.skills.backend">
+              <h3 class="skills-title">
+                <i class="skills-icon">⚡</i>
+                Backend Development
+              </h3>
+              <div class="skills-tags">
+                <span class="skill-tag" *ngFor="let skill of summary.skills.backend">
+                  {{ skill }}
+                </span>
               </div>
-              <div class="expertise-item">
-                <div class="expertise-icon">🎨</div>
-                <div class="expertise-content">
-                  <h4>Frontend Development</h4>
-                  <p>JavaScript, TypeScript, Angular, Tailwind, Bootstrap</p>
-                </div>
+            </div>
+
+            <!-- Frontend Skills -->
+            <div class="skills-category" *ngIf="summary.skills.frontend">
+              <h3 class="skills-title">
+                <i class="skills-icon">🎨</i>
+                Frontend Development
+              </h3>
+              <div class="skills-tags">
+                <span class="skill-tag" *ngFor="let skill of summary.skills.frontend">
+                  {{ skill }}
+                </span>
               </div>
             </div>
           </div>
-
-          <p class="closing-text">
-            With over <strong>two years of professional experience</strong> across various projects,
-            I specialize in creating robust, scalable web applications that deliver exceptional user experiences.
-          </p>
         </div>
       </div>
 
       <!-- Quick Facts -->
-      <div class="quick-facts">
+      <div class="quick-facts" *ngIf="summary?.facts">
         <h3 class="facts-title">Quick Facts</h3>
         <div class="facts-list">
-          <div class="fact-item">
-            <div class="fact-icon">🏆</div>
-            <div class="fact-text">Cum Laude Graduate</div>
-          </div>
-          <div class="fact-item">
-            <div class="fact-icon">🌐</div>
-            <div class="fact-text">Full-Stack Developer</div>
-          </div>
-          <div class="fact-item">
-            <div class="fact-icon">🚀</div>
-            <div class="fact-text">2+ Years Experience</div>
-          </div>
-          <div class="fact-item">
-            <div class="fact-icon">💼</div>
-            <div class="fact-text">Multiple Organizations</div>
+          <div class="fact-item" *ngFor="let fact of summary.facts">
+            <div class="fact-icon">{{ fact.icon }}</div>
+            <div class="fact-text">{{ fact.text }}</div>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 
