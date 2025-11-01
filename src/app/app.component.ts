@@ -8,6 +8,7 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { CertificatesComponent } from './components/certificates/certificates.component';
 import { LanguagesComponent } from './components/languages/languages.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { NavbarComponent } from "./components/navbar/navbar.component";
 
 @Component({
   selector: 'app-root',
@@ -21,8 +22,9 @@ import { FooterComponent } from './components/footer/footer.component';
     SkillsComponent,
     CertificatesComponent,
     LanguagesComponent,
-    FooterComponent
-  ],
+    FooterComponent,
+    NavbarComponent
+],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

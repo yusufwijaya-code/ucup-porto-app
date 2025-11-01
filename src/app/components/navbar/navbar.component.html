@@ -1,0 +1,80 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="nav-container">
+    <!-- Logo -->
+    <div class="nav-brand">
+      <a href="#header" class="brand-link">
+        <div class="brand-logo">🤲</div>
+        <span class="brand-text">Bismillah</span>
+      </a>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="nav-links">
+      <a href="#header" class="nav-link" [class.active]="activeSection === 'header'">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-text">Home</span>
+      </a>
+      <a href="#about" class="nav-link" [class.active]="activeSection === 'about'">
+        <span class="nav-icon">👋</span>
+        <span class="nav-text">About</span>
+      </a>
+      <a href="#experience" class="nav-link" [class.active]="activeSection === 'experience'">
+        <span class="nav-icon">💼</span>
+        <span class="nav-text">Experience</span>
+      </a>
+      <a href="#education" class="nav-link" [class.active]="activeSection === 'education'">
+        <span class="nav-icon">🎓</span>
+        <span class="nav-text">Education</span>
+      </a>
+      <a href="#skills" class="nav-link" [class.active]="activeSection === 'skills'">
+        <span class="nav-icon">🛠️</span>
+        <span class="nav-text">Skills</span>
+      </a>
+      <a href="#certificates" class="nav-link" [class.active]="activeSection === 'certificates'">
+        <span class="nav-icon">🏆</span>
+        <span class="nav-text">Certificates</span>
+      </a>
+      <a href="#languages" class="nav-link" [class.active]="activeSection === 'languages'">
+        <span class="nav-icon">🌐</span>
+        <span class="nav-text">Languages</span>
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" (click)="toggleMobileMenu()" aria-label="Toggle menu">
+      <span class="menu-icon" [class.active]="isMobileMenuOpen">☰</span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" [class.active]="isMobileMenuOpen">
+    <a href="#header" class="mobile-nav-link" (click)="closeMobileMenu()" [class.active]="activeSection === 'header'">
+      <span class="nav-icon">🏠</span>
+      Home
+    </a>
+    <a href="#summary" class="mobile-nav-link" (click)="closeMobileMenu()" [class.active]="activeSection === 'summary'">
+      <span class="nav-icon">👋</span>
+      About Me
+    </a>
+    <a href="#experience" class="mobile-nav-link" (click)="closeMobileMenu()" [class.active]="activeSection === 'experience'">
+      <span class="nav-icon">💼</span>
+      Experience
+    </a>
+    <a href="#education" class="mobile-nav-link" (click)="closeMobileMenu()" [class.active]="activeSection === 'education'">
+      <span class="nav-icon">🎓</span>
+      Education
+    </a>
+    <a href="#skills" class="mobile-nav-link" (click)="closeMobileMenu()" [class.active]="activeSection === 'skills'">
+      <span class="nav-icon">🛠️</span>
+      Skills
+    </a>
+    <a href="#certificates" class="mobile-nav-link" (click)="closeMobileMenu()" [class.active]="activeSection === 'certificates'">
+      <span class="nav-icon">🏆</span>
+      Certificates
+    </a>
+    <a href="#languages" class="mobile-nav-link" (click)="closeMobileMenu()" [class.active]="activeSection === 'languages'">
+      <span class="nav-icon">🌐</span>
+      Languages
+    </a>
+  </div>
+</nav>

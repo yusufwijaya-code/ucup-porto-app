@@ -1,64 +1,72 @@
-<header class="header">
+<header class="header-section" id="header">
   <div class="container">
     <div class="header-content">
       <!-- Profile Section -->
       <div class="profile-section">
         <div class="profile-image-container">
-          <img
-            [src]="getProfilePhoto()"
-            [alt]="personalInfo?.name + ' Profile Photo'"
-            class="profile-image"
-            (error)="handleImageError($event)"
-          >
-          <div class="image-overlay">
-            <div class="status-dot"></div>
+          <div class="image-wrapper">
+            <div class="image-content">
+              <img
+                [src]="getProfilePhoto()"
+                [alt]="personalInfo?.name + ' Profile Photo'"
+                class="profile-photo"
+                (error)="handleImageError($event)"
+              >
+              <div class="image-glow"></div>
+            </div>
           </div>
         </div>
 
-        <div class="profile-text">
-          <h1 class="name">{{ personalInfo?.name }}</h1>
-          <h2 class="title">{{ personalInfo?.title }}</h2>
-          <div class="location">
-            <i class="pin-icon"></i>
-            <span>{{ personalInfo?.location }}</span>
+        <div class="profile-info">
+          <div class="greeting-badge">
+            <span class="badge-text">Hello! I'm</span>
+          </div>
+
+          <h1 class="name-title">
+            <span class="name-gradient">{{ personalInfo?.name || 'Yusuf Wijaya' }}</span>
+          </h1>
+
+          <h2 class="job-title">
+            {{ personalInfo?.title || 'Software Engineer' }} &
+            <span class="highlight">{{ personalInfo?.specialization || 'Full Stack Developer' }}</span>
+          </h2>
+
+          <p class="description">
+            {{ personalInfo?.description || 'Passionate about creating innovative web solutions and building scalable applications. Specialized in modern web technologies and cloud computing.' }}
+          </p>
+
+          <div class="cta-buttons">
+            <a href="#summary" class="cta-btn primary">
+              <span class="btn-icon">👋</span>
+              About Me
+            </a>
+            <a href="#experience" class="cta-btn secondary">
+              <span class="btn-icon">💼</span>
+              View Experience
+            </a>
           </div>
         </div>
       </div>
 
-      <!-- Contact Info -->
-      <div class="contact-section">
-        <div class="contact-grid">
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="phone-icon"></i>
-            </div>
-            <div class="contact-details">
-              <span class="contact-label">Phone</span>
-              <span class="contact-value">{{ personalInfo?.phone }}</span>
-            </div>
+      <!-- Stats Section -->
+      <div class="stats-section">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">2+</div>
+            <div class="stat-label">Years Experience</div>
           </div>
-
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="email-icon"></i>
-            </div>
-            <div class="contact-details">
-              <span class="contact-label">Email</span>
-              <span class="contact-value">{{ personalInfo?.email }}</span>
-            </div>
+          <div class="stat-item">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Projects Completed</div>
           </div>
-        </div>
-
-        <!-- Social Links -->
-        <div class="social-links">
-          <a [href]="'https://' + personalInfo?.website" target="_blank" class="social-link">
-            <i class="link-icon"></i>
-            <span>Connect With Me</span>
-          </a>
-          <a [href]="'mailto:' + personalInfo?.email" class="social-link">
-            <i class="email-icon"></i>
-            <span>Send Email</span>
-          </a>
+          <div class="stat-item">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Technologies</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Certificates</div>
+          </div>
         </div>
       </div>
     </div>
@@ -66,8 +74,11 @@
 
   <!-- Background Elements -->
   <div class="background-elements">
-    <div class="bg-circle circle-1"></div>
-    <div class="bg-circle circle-2"></div>
-    <div class="bg-circle circle-3"></div>
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+    <div class="floating-tech">⚡</div>
+    <div class="floating-tech">🚀</div>
+    <div class="floating-tech">💻</div>
   </div>
 </header>
