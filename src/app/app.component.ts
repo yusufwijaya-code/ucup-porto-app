@@ -7,6 +7,7 @@ import { EducationComponent } from './components/education/education.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { CertificatesComponent } from './components/certificates/certificates.component';
 import { LanguagesComponent } from './components/languages/languages.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,8 @@ import { LanguagesComponent } from './components/languages/languages.component';
     EducationComponent,
     SkillsComponent,
     CertificatesComponent,
-    LanguagesComponent
+    LanguagesComponent,
+    FooterComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
