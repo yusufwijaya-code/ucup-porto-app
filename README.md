@@ -40,7 +40,7 @@ cd ucup-porto-app
 npm install
 
 # Start development server
-npm start
+npm start / ng serve
 
 # Build for production
 npm run build
@@ -129,7 +129,7 @@ ngh --dir=dist/ucup-porto-app
 
 **Yusuf Wijaya**
 📧 Email: [yusufwijaya3@gmail.com](mailto:yusufwijaya3@gmail.com)
-🌐 Website: [linktr.ee/uchoup](https://linktr.ee/uchoup)
+🌐 Connect With Me: [linktr.ee/uchoup](https://linktr.ee/uchoup)
 🐙 GitHub: [@yusufwijaya-code](https://github.com/yusufwijaya-code)
 
 ---
