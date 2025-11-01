@@ -1,0 +1,135 @@
+.experience-section {
+  padding: 3rem 0;
+  background-color: white;
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 30px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #667eea, #764ba2);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+      padding-left: 80px;
+
+      .timeline-marker {
+        position: absolute;
+        left: 22px;
+        top: 0;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border: 3px solid white;
+        box-shadow: 0 0 0 3px #667eea;
+      }
+
+      .timeline-content {
+        background: #f8f9fa;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+
+        .timeline-header {
+          margin-bottom: 1rem;
+
+          .position {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+          }
+
+          .company {
+            font-weight: 500;
+            color: #667eea;
+            margin-right: 1rem;
+          }
+
+          .period {
+            color: #666;
+            font-size: 0.9rem;
+          }
+        }
+
+        .responsibilities {
+          list-style: none;
+          padding: 0;
+
+          li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #666;
+            line-height: 1.6;
+
+            &::before {
+              content: '▸';
+              position: absolute;
+              left: 0;
+              color: #667eea;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-section {
+    .timeline {
+      &::before {
+        left: 20px;
+      }
+
+      .timeline-item {
+        padding-left: 60px;
+
+        .timeline-marker {
+          left: 12px;
+        }
+
+        .timeline-content {
+          padding: 1.5rem;
+        }
+      }
+    }
+  }
+}

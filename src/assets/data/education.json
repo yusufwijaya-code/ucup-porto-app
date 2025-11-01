@@ -1,0 +1,14 @@
+[
+  {
+    "degree": "Informatics Engineering",
+    "institution": "Syarif Hidayatullah State Islamic University Jakarta",
+    "year": "2024",
+    "type": "Bachelor's degree",
+    "achievements": [
+      "Enrolled as a Cloud Computing Student in 2022 at Bangkit Academy",
+      "Contributed as an Assistant for the Evaluation Team during the 2020 Electronic-Based Public Service Assessment",
+      "Authored a scientific paper on 'Implementation of Machine Learning K-Nearest Neighbors (KNN) with Python Language'",
+      "Published a journal on 'Performance Analysis of KNN, Naive Bayes, and SVM Algorithms for Classification of Natural Language Processing Texts'"
+    ]
+  }
+]

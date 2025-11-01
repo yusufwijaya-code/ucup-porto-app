@@ -1,0 +1,39 @@
+<section class="education-section">
+  <div class="container">
+    <h2 class="section-title">Education</h2>
+    <div class="education-timeline">
+      @for (edu of education; track edu.degree) {
+        <div class="education-item">
+          <div class="education-card">
+            <div class="education-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+              </svg>
+            </div>
+            <div class="education-content">
+              <div class="education-header">
+                <h3 class="degree">{{ edu.degree }}</h3>
+                <span class="year">{{ edu.year }}</span>
+              </div>
+              <p class="institution">{{ edu.institution }}</p>
+              <p class="type">{{ edu.type }}</p>
+              @if (edu.achievements && edu.achievements.length > 0) {
+                <div class="achievements">
+                  <h4 class="achievements-title">Key Achievements:</h4>
+                  <ul class="achievements-list">
+                    @for (achievement of edu.achievements; track achievement) {
+                      <li class="achievement-item">
+                        <span class="achievement-icon">🎯</span>
+                        {{ achievement }}
+                      </li>
+                    }
+                  </ul>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

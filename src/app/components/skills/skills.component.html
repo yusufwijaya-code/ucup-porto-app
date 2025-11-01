@@ -1,0 +1,16 @@
+<section class="skills-section">
+  <div class="container">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-item" *ngFor="let skill of skills">
+        <div class="skill-info">
+          <span class="skill-name">{{ skill.name }}</span>
+          <span class="skill-level {{ getLevelClass(skill.level) }}">{{ skill.level }}</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress {{ getLevelClass(skill.level) }}"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

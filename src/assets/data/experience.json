@@ -1,0 +1,25 @@
+[
+  {
+    "position": "Software Engineer",
+    "company": "PT. Esensi Solusi Buana",
+    "period": "02/2023 - Present",
+    "responsibilities": [
+      "Utilized Yil2 and Angular Framework in the development of various projects.",
+      "Contributed to the development of CMS, POS, and ERP application systems at Starbucks Indonesia.",
+      "Provided support in resolving issues and troubleshooting application system problems across all Starbucks Indonesia outlets.",
+      "Successfully integrated POS payment with Wifi ID, enabling customers to conveniently use their Wifi ID credentials for payment.",
+      "Revamping the Starbuck Card validation system, encompassing both POS and ERP.",
+      "Prepared comprehensive Readme documentation, outlining detailed installation and usage procedures for various application systems Starbucks Indonesia."
+    ]
+  },
+  {
+    "position": "Backend Web Developer",
+    "company": "PT. Kreditek Financial Access",
+    "period": "10/2022 - 01/2023",
+    "responsibilities": [
+      "Proficient in PHP Native, utilizing it to develop efficient and robust web applications.",
+      "Successfully contributed to the creation and enhancement of Banking System Digitization Flow.",
+      "Demonstrated expertise in dynamically creating PDF print layouts for various applications."
+    ]
+  }
+]

@@ -1,0 +1,37 @@
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <!-- Photo Profile -->
+      <div class="profile-photo-container">
+        <img
+          [src]="getProfilePhoto()"
+          [alt]="personalInfo?.name + ' Profile Photo'"
+          class="profile-photo"
+          (error)="handleImageError($event)"
+        >
+      </div>
+
+      <h1 class="name">{{ personalInfo?.name }}</h1>
+      <h2 class="title">{{ personalInfo?.title }}</h2>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="icon phone"></i>
+          <span>{{ personalInfo?.phone }}</span>
+        </div>
+        <div class="contact-item">
+          <i class="icon email"></i>
+          <span>{{ personalInfo?.email }}</span>
+        </div>
+        <div class="contact-item">
+          <i class="icon website"></i>
+          <span>{{ personalInfo?.website }}</span>
+        </div>
+        <div class="contact-item">
+          <i class="icon location"></i>
+          <span>{{ personalInfo?.location }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,59 +1,147 @@
-# UcupPortoApp
+Berikut versi lengkap README.md kamu dalam format **Markdown** yang siap langsung dipakai di GitHub:
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.4.
+---
 
-## Development server
+````markdown
+# 🌐 Yusuf Wijaya - Portfolio Website
 
-To start a local development server, run:
+A modern, responsive portfolio website built with **Angular 17**, featuring an elegant design and smooth animations.
 
-```bash
-ng serve
-```
+---
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🚀 Features
 
-## Code scaffolding
+- 🎨 **Modern Design** – Clean and professional layout with gradient themes  
+- 📱 **Responsive** – Fully responsive for desktop, tablet, and mobile  
+- ⚡ **Angular 17** – Built using the latest Angular framework  
+- 🧩 **Standalone Components** – Modern component architecture  
+- 💅 **SCSS Styling** – Custom, maintainable, and scalable styles  
+- 🧠 **JSON Data** – Dynamic content management from JSON files  
+- 🌀 **Smooth Animations** – Elegant transitions and hover effects  
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## 🛠️ Tech Stack
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+| Category | Technology |
+|-----------|-------------|
+| **Framework** | Angular 17 |
+| **Styling** | SCSS |
+| **Icons** | SVG Icons |
+| **Fonts** | Google Fonts (Inter) |
+| **Deployment** | GitHub Pages / Netlify / Vercel |
 
-```bash
-ng generate --help
-```
+---
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 📦 Installation
 
 ```bash
-ng test
+# Clone the repository
+git clone https://github.com/yusufwijaya-code/ucup-porto-app.git
+
+# Navigate to project directory
+cd ucup-porto-app
+
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+
+# Build for production
+npm run build
+````
+
+---
+
+## 🎨 Project Structure
+
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── header/
+│   │   ├── summary/
+│   │   ├── experience/
+│   │   ├── education/
+│   │   ├── skills/
+│   │   ├── certificates/
+│   │   └── languages/
+│   ├── services/
+│   └── assets/
+│       └── data/
+└── index.html
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 📄 Sections
+
+* **Header** – Profile photo, name, title, and contact information
+* **Summary** – Professional summary and introduction
+* **Experience** – Work experience with timeline
+* **Education** – Educational background and achievements
+* **Skills** – Technical skills with proficiency levels
+* **Certificates** – Professional certifications
+* **Languages** – Language proficiency
+
+---
+
+## 🌈 Color Scheme
+
+| Element              | Color                      |
+| -------------------- | -------------------------- |
+| **Primary Gradient** | `#667eea → #764ba2`        |
+| **Background**       | Light grays and whites     |
+| **Text**             | Dark grays for readability |
+
+---
+
+## 📱 Responsive Breakpoints
+
+| Device      | Width          |
+| ----------- | -------------- |
+| **Desktop** | ≥ 1200px       |
+| **Tablet**  | 768px – 1199px |
+| **Mobile**  | 320px – 767px  |
+
+---
+
+## 🚀 Deployment
+
+### **GitHub Pages**
 
 ```bash
-ng e2e
+npm install -g angular-cli-ghpages
+ng build --base-href "https://yusufwijaya-code.github.io/ucup-porto-app/"
+ngh --dir=dist/ucup-porto-app
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### **Netlify**
 
-## Additional Resources
+1. Connect your GitHub repository to Netlify
+2. Set **Build Command**: `npm run build`
+3. Set **Publish Directory**: `dist/ucup-porto-app`
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### **Vercel**
+
+1. Connect your GitHub repository to Vercel
+2. Framework: **Angular**
+3. Build command: `npm run build`
+
+---
+
+## 👨‍💻 Author
+
+**Yusuf Wijaya**
+📧 Email: [yusufwijaya3@gmail.com](mailto:yusufwijaya3@gmail.com)
+🌐 Website: [linktr.ee/uchoup](https://linktr.ee/uchoup)
+🐙 GitHub: [@yusufwijaya-code](https://github.com/yusufwijaya-code)
+
+---
+
+## 📝 License
+
+This project is licensed under the **MIT License** – feel free to use and modify it for your own portfolio.
+
+---

@@ -1,0 +1,33 @@
+<section class="languages-section">
+  <div class="container">
+    <h2 class="section-title">Languages</h2>
+    <div class="languages-container">
+      <div class="language-item" *ngFor="let language of languages">
+        <div class="language-header">
+          <div class="language-info">
+            <h3 class="language-name">{{ language.name }}</h3>
+            <span class="language-level {{ getProficiencyClass(language.level) }}">
+              {{ language.level }}
+            </span>
+          </div>
+          <div class="language-percentage">
+            {{ getProficiencyLevel(language.level) }}%
+          </div>
+        </div>
+        <div class="language-progress">
+          <div class="progress-bar">
+            <div
+              class="progress-fill {{ getProficiencyClass(language.level) }}"
+              [style.width.%]="getProficiencyLevel(language.level)">
+            </div>
+          </div>
+        </div>
+        <div class="language-description">
+          <span class="description-text" [class]="getProficiencyClass(language.level)">
+            {{ getLanguageDescription(language.level) }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
