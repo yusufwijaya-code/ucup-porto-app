@@ -3,6 +3,7 @@
     "position": "Software Engineer",
     "company": "PT. Esensi Solusi Buana",
     "period": "02/2023 - Present",
+    "technologies": ["Yii2", "Angular", "PHP", "JavaScript", "MySQL", "Golang", "REST API"],
     "responsibilities": [
       "Utilized Yil2 and Angular Framework in the development of various projects.",
       "Contributed to the development of CMS, POS, and ERP application systems at Starbucks Indonesia.",
@@ -16,6 +17,7 @@
     "position": "Backend Web Developer",
     "company": "PT. Kreditek Financial Access",
     "period": "10/2022 - 01/2023",
+    "technologies": ["PHP Native", "MySQL", "JavaScript", "REST API", "PDF Generation"],
     "responsibilities": [
       "Proficient in PHP Native, utilizing it to develop efficient and robust web applications.",
       "Successfully contributed to the creation and enhancement of Banking System Digitization Flow.",

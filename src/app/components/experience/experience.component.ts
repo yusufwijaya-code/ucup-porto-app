@@ -19,13 +19,4 @@ export class ExperienceComponent implements OnInit {
       this.experiences = data;
     });
   }
-
-  getTechnologies(position: string): string[] {
-    const techMap: { [key: string]: string[] } = {
-      'Software Engineer': ['Yii2', 'Angular', 'PHP', 'JavaScript', 'MySQL', 'REST API'],
-      'Backend Web Developer': ['PHP Native', 'MySQL', 'JavaScript', 'REST API', 'PDF Generation']
-    };
-
-    return techMap[position] || ['Various Technologies'];
-  }
 }

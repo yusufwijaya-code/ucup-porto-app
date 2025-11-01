@@ -11,8 +11,8 @@
 
     <!-- Experience Timeline -->
     <div class="experience-timeline">
-      @for (exp of experiences; track exp.position; let i = $index) {
-        <div class="timeline-item" [class]="'item-' + (i + 1)">
+      @for (exp of experiences; track exp.position; let i = $index; let isEven = $even) {
+        <div class="timeline-item" [class]="'item-' + (i + 1)" [class.left-side]="isEven" [class.right-side]="!isEven">
           <!-- Timeline Connector -->
           <div class="timeline-connector">
             <div class="connector-line"></div>
@@ -59,7 +59,7 @@
             <div class="technologies">
               <div class="tech-label">Technologies Used:</div>
               <div class="tech-tags">
-                @for (tech of getTechnologies(exp.position); track tech) {
+                @for (tech of exp.technologies; track tech) {
                   <span class="tech-tag">{{ tech }}</span>
                 }
               </div>
@@ -67,40 +67,6 @@
           </div>
         </div>
       }
-    </div>
-
-    <!-- Career Stats -->
-    <div class="career-stats">
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-icon">💼</div>
-          <div class="stat-content">
-            <div class="stat-number">{{ experiences.length }}+</div>
-            <div class="stat-label">Professional Roles</div>
-          </div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon">🚀</div>
-          <div class="stat-content">
-            <div class="stat-number">10+</div>
-            <div class="stat-label">Projects Delivered</div>
-          </div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon">⭐</div>
-          <div class="stat-content">
-            <div class="stat-number">5+</div>
-            <div class="stat-label">Technologies</div>
-          </div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon">📈</div>
-          <div class="stat-content">
-            <div class="stat-number">2+</div>
-            <div class="stat-label">Years Experience</div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 
