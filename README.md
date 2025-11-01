@@ -1,7 +1,3 @@
-Berikut versi lengkap README.md kamu dalam format **Markdown** yang siap langsung dipakai di GitHub:
-
----
-
 ````markdown
 # 🌐 Yusuf Wijaya - Portfolio Website
 
