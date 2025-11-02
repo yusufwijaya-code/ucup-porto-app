@@ -43,14 +43,10 @@
               "outputHashing": "all",
               "baseHref": "/ucup-porto-app/",
               "optimization": true,
-              "sourceMap": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true
+              "sourceMap": false
             },
             "development": {
               "optimization": false,
-              "extractLicenses": false,
               "sourceMap": true,
               "baseHref": "/"
             }
@@ -87,5 +83,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "08692e8d-298f-4429-887c-c9ab0e231b33"
   }
 }
