@@ -15,8 +15,14 @@ export class ProjectsComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.dataService.getProjects().subscribe(data => {
-      this.projects = data;
+    this.dataService.getProjects().subscribe({
+      next: (data) => {
+        this.projects = data;
+        console.log('Projects loaded:', this.projects); // Debug log
+      },
+      error: (error) => {
+        console.error('Error loading projects:', error);
+      }
     });
   }
 
@@ -35,8 +41,10 @@ export class ProjectsComponent implements OnInit {
   }
 
   openProject(link: string): void {
-    if (link) {
+    if (link && link !== 'https://example.com/') {
       window.open(link, '_blank', 'noopener,noreferrer');
+    } else {
+      console.log('Project link not available');
     }
   }
 }
