@@ -47,4 +47,15 @@ export class ProjectsComponent implements OnInit {
       console.log('Project link not available');
     }
   }
+
+  // Tambahkan method untuk handle image error
+  handleImageError(event: any, project: any): void {
+    console.error(`Error loading image for project: ${project.projectName}`, event);
+    // Fallback ke placeholder
+    event.target.style.display = 'none';
+    const placeholder = event.target.parentElement.querySelector('.thumbnail-placeholder');
+    if (placeholder) {
+      placeholder.style.display = 'flex';
+    }
+  }
 }

@@ -1,50 +1,10 @@
 [
   {
-    "projectName": "E-Commerce Platform",
-    "description": "A full-stack e-commerce solution with React frontend and Node.js backend, featuring user authentication, payment integration, and admin dashboard.",
-    "client": "Retail Company Inc.",
-    "thumbnailImage": "assets/images/projects/ecommerce-thumbnail.jpg",
-    "projectLink": "https://example.com/ecommerce-demo",
-    "technologies": ["React", "Node.js", "MongoDB", "Stripe API", "AWS"]
-  },
-  {
-    "projectName": "Healthcare Management System",
-    "description": "Comprehensive healthcare management system for clinics including patient records, appointment scheduling, and billing features.",
-    "client": "MediCare Solutions",
-    "thumbnailImage": "assets/images/projects/healthcare-thumbnail.jpg",
-    "projectLink": "https://example.com/healthcare-demo",
-    "technologies": ["Angular", "Spring Boot", "PostgreSQL", "Docker", "Redis"]
-  },
-  {
-    "projectName": "Mobile Banking App",
-    "description": "Secure mobile banking application with biometric authentication, fund transfer, bill payments, and investment features.",
-    "client": "Global Bank Ltd.",
-    "thumbnailImage": "assets/images/projects/banking-thumbnail.jpg",
-    "projectLink": "https://example.com/banking-demo",
-    "technologies": ["Flutter", "Firebase", "Node.js", "MySQL", "JWT"]
-  },
-  {
-    "projectName": "Smart Home IoT Platform",
-    "description": "IoT platform for smart home automation with real-time device control, energy monitoring, and voice assistant integration.",
-    "client": "SmartLife Technologies",
-    "thumbnailImage": "assets/images/projects/iot-thumbnail.jpg",
-    "projectLink": "https://example.com/iot-demo",
-    "technologies": ["React Native", "Python", "MQTT", "AWS IoT", "TensorFlow"]
-  },
-  {
-    "projectName": "Educational Learning Platform",
-    "description": "Interactive online learning platform with video courses, quizzes, progress tracking, and virtual classroom features.",
-    "client": "EduTech Innovations",
-    "thumbnailImage": "assets/images/projects/education-thumbnail.jpg",
-    "projectLink": "https://example.com/education-demo",
-    "technologies": ["Vue.js", "Laravel", "MySQL", "WebRTC", "Cloudinary"]
-  },
-  {
-    "projectName": "Logistics Tracking System",
-    "description": "Real-time logistics and shipment tracking system with route optimization, delivery notifications, and analytics dashboard.",
-    "client": "QuickShip Logistics",
-    "thumbnailImage": "assets/images/projects/logistics-thumbnail.jpg",
-    "projectLink": "https://example.com/logistics-demo",
-    "technologies": ["React", "Express.js", "MongoDB", "Socket.io", "Google Maps API"]
+    "projectName": "Website UKM LDK Syahid UIN Jakarta",
+    "description": "The website belongs to LDK Syahid at Universitas Islam Negeri Syarif Hidayatullah Jakarta. It serves as a platform for the campus‐based Islamic student organization to publish information about events, leadership training programs, design workshops, and creative competitions aimed at empowering students in dakwah (religious outreach and leadership) and digital content creation",
+    "client": "UKM LDK Syahid",
+    "thumbnailImage": "assets/images/projects/web-ldk-syahid.png",
+    "projectLink": "https://www.ldksyah.id/",
+    "technologies": ["Laravel", "Pyhton", "MySQL", "Google Cloud"]
   }
 ]
