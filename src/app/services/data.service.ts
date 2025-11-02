@@ -37,4 +37,8 @@ export class DataService {
   getLanguages(): Observable<any> {
     return this.http.get(`${this.basePath}languages.json`);
   }
+
+  getProjects(): Observable<any> {
+    return this.http.get(`${this.basePath}projects.json`);
+  }
 }

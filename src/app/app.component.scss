@@ -16,6 +16,7 @@
     "education"
     "skills"
     "certificates"
+    "projects"  // Tambahkan ini
     "languages";
   gap: 0;
 
@@ -46,6 +47,7 @@ app-experience { grid-area: experience; }
 app-education { grid-area: education; }
 app-skills { grid-area: skills; }
 app-certificates { grid-area: certificates; }
+app-projects { grid-area: projects; } // Tambahkan ini
 app-languages { grid-area: languages; }
 
 // Smooth scrolling for navigation

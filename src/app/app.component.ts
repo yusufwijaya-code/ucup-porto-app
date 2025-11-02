@@ -9,6 +9,7 @@ import { CertificatesComponent } from './components/certificates/certificates.co
 import { LanguagesComponent } from './components/languages/languages.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from "./components/navbar/navbar.component";
+import { ProjectsComponent } from "./components/projects/projects.component"; // Tambahkan ini
 
 @Component({
   selector: 'app-root',
@@ -23,8 +24,9 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
     CertificatesComponent,
     LanguagesComponent,
     FooterComponent,
-    NavbarComponent
-],
+    NavbarComponent,
+    ProjectsComponent
+  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
