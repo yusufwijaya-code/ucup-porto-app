@@ -43,7 +43,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   updateActiveSection() {
-    const sections = ['header', 'about', 'experience', 'education', 'skills', 'certificates', 'languages'];
+    const sections = ['header', 'about', "projects", 'experience', 'education', 'skills', 'certificates', 'languages'];
     const scrollPosition = window.scrollY + 100;
 
     for (const section of sections) {

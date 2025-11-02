@@ -18,6 +18,11 @@
         <span class="nav-icon">👋</span>
         <span class="nav-text">About</span>
       </a>
+      <!-- TAMBAHKAN: Projects link -->
+      <a href="#projects" class="nav-link" [class.active]="activeSection === 'projects'">
+        <span class="nav-icon">🚀</span>
+        <span class="nav-text">Projects</span>
+      </a>
       <a href="#experience" class="nav-link" [class.active]="activeSection === 'experience'">
         <span class="nav-icon">💼</span>
         <span class="nav-text">Experience</span>
@@ -59,6 +64,11 @@
     <a href="#about" class="mobile-nav-link" (click)="closeMobileMenu()" [class.active]="activeSection === 'about'">
       <span class="nav-icon">👋</span>
       About
+    </a>
+    <!-- PERBAIKAN: Projects link dengan text yang benar -->
+    <a href="#projects" class="mobile-nav-link" (click)="closeMobileMenu()" [class.active]="activeSection === 'projects'">
+      <span class="nav-icon">🚀</span>
+      Projects
     </a>
     <a href="#experience" class="mobile-nav-link" (click)="closeMobileMenu()" [class.active]="activeSection === 'experience'">
       <span class="nav-icon">💼</span>

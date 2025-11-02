@@ -12,11 +12,11 @@
   grid-template-areas:
     "header"
     "summary"
+    "projects"    // Pindahkan ke sini (setelah summary)
     "experience"
     "education"
     "skills"
     "certificates"
-    "projects"  // Tambahkan ini
     "languages";
   gap: 0;
 
@@ -43,11 +43,11 @@ app-header {
 }
 
 app-summary { grid-area: summary; }
+app-projects { grid-area: projects; } // Pindahkan ke sini
 app-experience { grid-area: experience; }
 app-education { grid-area: education; }
 app-skills { grid-area: skills; }
 app-certificates { grid-area: certificates; }
-app-projects { grid-area: projects; } // Tambahkan ini
 app-languages { grid-area: languages; }
 
 // Smooth scrolling for navigation
