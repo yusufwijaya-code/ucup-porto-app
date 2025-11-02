@@ -2,16 +2,19 @@
   {
     "name": "Cloud Computing Cohort",
     "issuer": "Bangkit Academy led by Google, Tokopedia, Gojek, & Traveloka",
-    "period": "02/2022 - Present"
+    "period": "02/2022 - Present",
+    "link": "https://example.com/bangkit-certificate"
   },
   {
     "name": "Vue JS Web Frontend Development",
     "issuer": "SanberCode Academy",
-    "period": "08/2021 - Present"
+    "period": "08/2021 - Present",
+    "link": "https://example.com/vuejs-certificate"
   },
   {
     "name": "Laravel Web Development",
     "issuer": "SanberCode Academy",
-    "period": "03/2021 - Present"
+    "period": "03/2021 - Present",
+    "link": "https://example.com/laravel-certificate"
   }
 ]

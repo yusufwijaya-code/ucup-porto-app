@@ -27,7 +27,7 @@ export class CertificatesComponent implements OnInit {
     const currentYear = new Date().getFullYear();
     return this.certificates.filter(cert => {
       const year = parseInt(cert.period.split('/')[1]);
-      return year >= currentYear - 1; // Active if from last year or current
+      return year >= currentYear - 1;
     }).length;
   }
 
@@ -60,5 +60,12 @@ export class CertificatesComponent implements OnInit {
     if (year >= currentYear) return 'Active';
     if (year >= currentYear - 2) return 'Recent';
     return 'Completed';
+  }
+
+  // Optional: Method to handle certificate link clicks
+  openCertificate(link: string): void {
+    if (link) {
+      window.open(link, '_blank', 'noopener,noreferrer');
+    }
   }
 }
