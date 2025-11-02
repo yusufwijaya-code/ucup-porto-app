@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { ExperienceComponent } from './components/experience/experience.component';
@@ -9,23 +10,24 @@ import { CertificatesComponent } from './components/certificates/certificates.co
 import { LanguagesComponent } from './components/languages/languages.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from "./components/navbar/navbar.component";
-import { ProjectsComponent } from "./components/projects/projects.component"; // Tambahkan ini
+import { ProjectsComponent } from "./components/projects/projects.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     CommonModule,
+    RouterOutlet,
     HeaderComponent,
     SummaryComponent,
+    ProjectsComponent,
     ExperienceComponent,
     EducationComponent,
     SkillsComponent,
     CertificatesComponent,
     LanguagesComponent,
     FooterComponent,
-    NavbarComponent,
-    ProjectsComponent
+    NavbarComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']

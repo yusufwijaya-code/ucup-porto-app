@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <base href="/ucup-porto-app/">
+  <script>
+    // Handle client-side routing for GitHub Pages
+    const segment = 1;
+    const l = window.location;
+    const base = l.pathname.split('/').slice(0, 1 + segment).join('/');
+
+    if (l.pathname.endsWith('.html')) {
+      // Redirect .html extensions to clean URLs
+      const path = l.pathname.substring(0, l.pathname.length - 5);
+      l.replace(l.protocol + '//' + l.host + base + path + l.search + l.hash);
+    } else {
+      // Handle deep links
+      sessionStorage.redirect = l.href;
+    }
+  </script>
+</head>
+<body>
+  <noscript>
+    <h1>Page Not Found</h1>
+    <p>If you're seeing this message, JavaScript is disabled. Please enable JavaScript to view this application.</p>
+    <p><a href="/ucup-porto-app/">Go to Home Page</a></p>
+  </noscript>
+</body>
+</html>
